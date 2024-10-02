@@ -7,7 +7,7 @@ public class Student {
 
     public static double ratingSum;
     public static int studentsAmount;
-    
+
 
     public Student() {
         studentsAmount++;
@@ -73,6 +73,14 @@ public class Student {
     }
 
     public static void main(String[] args) {
+
+        Student student1 = new Student("John",10);
+        Student student2 = new Student("Bill",25);
+        Student student3 = new Student("Rodrigo",33);
+
+        System.out.println(Student.getAvgRating());
+        student2.changeRating(11);
+        System.out.println(Student.getAvgRating());
 
     }
 }
