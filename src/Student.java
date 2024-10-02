@@ -1,50 +1,78 @@
+import java.util.List;
+
+
 public class Student {
-    int rating;
+    private int rating;
     private String name;
 
-    // TODO implement Student class according to the instructions provided in the README.md file
+    public static double ratingSum;
+    public static int studentsAmount;
+    
+
+    public Student() {
+        studentsAmount++;
+    }
 
     public Student(String name) {
-        //TODO initialize name
+        this.name = name;
+        studentsAmount++;
+    }
+
+    public Student(String name, int rating) {
+        this.name = name;
+        this.rating = rating;
+        ratingSum += rating;
+        studentsAmount++;
     }
 
     public static double getAvgRating() {
-        // TODO return average rating of all students
-        return 0;
+        if (ratingSum == 0) {
+            return 0.0d;
+        } else {
+            return ratingSum / studentsAmount;
+        }
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
-        // TODO set student's name
+        this.name = name;
     }
 
     public int getRating() {
-        return rating;
+        return this.rating;
     }
 
     public void setRating(int rating) {
-        // TODO initialize rating;
+        ratingSum -= this.rating;
+        this.rating = rating;
+        ratingSum += rating;
     }
 
     public boolean betterStudent(Student student) {
-        // TODO return the result of comparing this.student's rating with the student's rating
-        return false;
+        return this.rating > student.rating;
     }
 
     public void changeRating(int rating) {
-        // TODO change this student's rating and average rating of all students
+        ratingSum -= this.rating;
+        this.rating = rating;
+        ratingSum += rating;
+
     }
 
     public static void removeStudent(Student student) {
-        // TODO remove student
+        studentsAmount--;
+        ratingSum -= student.getRating();
     }
 
     @Override
     public String toString() {
-        // TODO return String with name and rating of this student
-        return "";
+        return "Student{name='" + this.name + "', rating=" + this.rating + "}";
+    }
+
+    public static void main(String[] args) {
+
     }
 }
