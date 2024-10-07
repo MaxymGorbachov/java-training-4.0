@@ -26,11 +26,7 @@ public class Student {
     }
 
     public static double getAvgRating() {
-        if (studentsAmount == 0) {
-            return 0.0d;
-        } else {
-            return ratingSum / studentsAmount;
-        }
+        return studentsAmount == 0 ? 0d : ratingSum / studentsAmount;
     }
 
     public String getName() {
