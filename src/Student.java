@@ -1,6 +1,3 @@
-import java.util.List;
-
-
 public class Student {
     private int rating;
     private String name;
@@ -55,7 +52,6 @@ public class Student {
         ratingSum -= this.rating;
         this.rating = rating;
         ratingSum += rating;
-
     }
 
     public static void removeStudent(Student student) {
@@ -70,13 +66,12 @@ public class Student {
 
     public static void main(String[] args) {
 
-        Student student1 = new Student("John",10);
-        Student student2 = new Student("Bill",25);
-        Student student3 = new Student("Rodrigo",33);
+        Student student1 = new Student("John", 10);
+        Student student2 = new Student("Bill", 25);
+        Student student3 = new Student("Rodrigo", 33);
 
         System.out.println(Student.getAvgRating());
         student2.changeRating(11);
         System.out.println(Student.getAvgRating());
-
     }
 }
