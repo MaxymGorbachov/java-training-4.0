@@ -26,7 +26,7 @@ public class Student {
     }
 
     public static double getAvgRating() {
-        if (ratingSum == 0) {
+        if (studentsAmount == 0) {
             return 0.0d;
         } else {
             return ratingSum / studentsAmount;
