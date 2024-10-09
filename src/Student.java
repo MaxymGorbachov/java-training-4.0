@@ -23,7 +23,7 @@ public class Student {
     }
 
     public static double getAvgRating() {
-        return studentsAmount == 0 ? 0d : ratingSum / studentsAmount;
+        return (double) studentsAmount == 0 ? 0d : ratingSum / studentsAmount;
     }
 
     public String getName() {
