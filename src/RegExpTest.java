@@ -23,7 +23,8 @@ public class RegExpTest {
                 {"valid IP: 255.255.255.255!", "255.255.255.255"},
                 {"invalid:255.255.255.255", "255.255.255.255"},
                 {"10.10.1.1","10.10.1.1"},
-                {"The 0.x.x.x is not a valid IP address. 0.0.0.0", ""}
+                {"The 0.x.x.x is not a valid IP address. 0.0.0.0", ""},
+                {"0.125.365.256",""}
         };
     }
 
