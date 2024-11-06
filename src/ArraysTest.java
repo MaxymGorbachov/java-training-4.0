@@ -22,8 +22,27 @@ public class ArraysTest {
                         new String[]{"here", "is", "some", "text", ".", "text"},
                         new String[]{"some", "text", "above", "."},
                         new String[]{"some", "text", "."}
+                },
+                {
+                        new String[]{"red", "blue", "green", "yellow"},
+                        new String[]{"purple", "blue", "orange", "green","blue"},
+                        new String[]{"blue", "green"}
+                },
+                {
+                        new String[]{"a", "a", "b", "c", "d", "d"},
+                        new String[]{"d", "b", "c", "e"},
+                        new String[]{"b", "c", "d"}
+                },
+                {
+                        new String[]{},
+                        new String[]{"a", "b", "c"},
+                        new String[]{}
+                },
+                {
+                        new String[]{"a", "b", "c", "d"},
+                        new String[]{"a", "b", "c", "d"},
+                        new String[]{"a", "b", "c", "d"}
                 }
-                // TODO add 2 more test data here
         };
     }
 
