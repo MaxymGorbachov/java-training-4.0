@@ -19,8 +19,20 @@ public class StreamTaskTest {
                 {
                         new int[]{13, -2, 33, -4, 5},
                         20
+                },
+                {
+                        new int[]{1, 3, 5, 7, 9},
+                        0
+                },
+                {
+                        new int[]{},
+                        0
+                },
+                {
+                        new int[]{-2, -4, -6, -8},
+                        120
                 }
-                // TODO add 2 more test data here
+
         };
     }
 
@@ -38,8 +50,16 @@ public class StreamTaskTest {
                 {
                         new int[]{130, -200, 330, -40, 50, 66},
                         new int[]{}
+                },
+                {
+                        new int[]{-1, -3, -5, -7, -9},
+                        new int[]{-9, -7, -5, -3, -1}
+                },
+                {
+                        new int[]{10, 20, 30},
+                        new int[]{}
                 }
-                // TODO add 2 more test data here
+
         };
     }
 
