@@ -9,13 +9,13 @@ public class TestClassThree {
         System.out.println("Test method with priority 3");
     }
 
-    @Test(priority = 1)
+    @Test(priority = 2)
     public void testMethodTwo() {
-        System.out.println("Test method with priority 1");
+        System.out.println("Test method with priority 2");
     }
 
-    @Test(priority = 2)
+    @Test(priority = 1)
     public void testMethodThree() {
-        System.out.println("Test method with priority 2");
+        System.out.println("Test method with priority 1");
     }
 }

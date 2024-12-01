@@ -6,11 +6,11 @@
 <test name = "test1">
 
     <parameter name="param1" value="Hello"/>
-    <parameter name="param2" value="TestNG!!"/>
+    <parameter name="param2" value="TestNG!/0_0\!"/>
 
-    <classes>
-        <class name = "example.TestClassTwo" />
-    </classes>
+    <packages>
+        <package name="example" />
+    </packages>
 
 </test>
 </suite>
