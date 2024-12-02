@@ -9,7 +9,7 @@ public class TestClassTwo {
 
     @Test
     @Parameters({"param1", "param2"})
-    public void testMethodFromXml(@Optional("Hello") String param1, @Optional("TestNG!") String param2) {
+    public void testMethodFromXml(String param1, String param2) {
         System.out.println("Test method from XML - Param1: " + param1 + ", Param2: " + param2);
     }
 
