@@ -4,10 +4,8 @@
 
 <suite name = "Suite1">
 <test name = "test1">
-
     <parameter name="param1" value="Hello"/>
     <parameter name="param2" value="TestNG!/0_0\!"/>
-
     <packages>
         <package name="example" />
     </packages>
