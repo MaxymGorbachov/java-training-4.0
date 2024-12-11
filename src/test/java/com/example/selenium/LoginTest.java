@@ -9,3 +9,5 @@ public class LoginTest extends BaseTest {
         // TODO use steps for the login and logout
     }
 }
+
+
