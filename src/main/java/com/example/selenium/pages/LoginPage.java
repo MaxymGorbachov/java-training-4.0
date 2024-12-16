@@ -22,13 +22,13 @@ public class LoginPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    public LoginPage setUsername(String username) {
-        usernameField.sendKeys(username);
+    public LoginPage setUsername(String text) {
+        usernameField.sendKeys(text);
         return this;
     }
 
-    public LoginPage setPassword(String password) {
-        passwordField.sendKeys(password);
+    public LoginPage setPassword(String text) {
+        passwordField.sendKeys(text);
         return this;
     }
 

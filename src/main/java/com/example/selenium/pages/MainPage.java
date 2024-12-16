@@ -23,8 +23,8 @@ public class MainPage extends BasePage {
         return pageTitle.getText();
     }
 
-    public LoginPage clickLogout() {
+    public MainPage clickLogout() {
         logoutButton.click();
-        return new LoginPage(driver);
+        return this;
     }
 }

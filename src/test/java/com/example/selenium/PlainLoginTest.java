@@ -1,9 +1,11 @@
 package com.example.selenium;
 
+import com.example.selenium.pages.LoginPage;
+import com.example.selenium.pages.MainPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -17,7 +19,7 @@ public class PlainLoginTest {
     public void setUp() {
         WebDriverManager.chromedriver().clearDriverCache().setup();
         WebDriverManager.chromedriver().clearResolutionCache().setup();
-        driver = WebDriverManager.chromedriver().create();
+        driver = new ChromeDriver();
     }
 
     @AfterClass
@@ -28,14 +30,18 @@ public class PlainLoginTest {
     }
 
     @Test
-    public void login() {
+    public void loginTest() {
         driver.get("https://the-internet.herokuapp.com/login");
         driver.manage().window().setSize(new Dimension(840, 1027));
-        driver.findElement(By.id("username")).sendKeys("tomsmith");
-        driver.findElement(By.id("password")).sendKeys("SuperSecretPassword!");
-        driver.findElement(By.cssSelector(".fa")).click();
-        assertEquals(driver.findElement(By.cssSelector("h2")).getText(), "Secure Area", "Login failed");
-        driver.findElement(By.cssSelector(".icon-2x")).click();
-        driver.close();
+
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.setUsername("tomsmith")
+                .setPassword("SuperSecretPassword!")
+                .clickLogin();
+
+        MainPage mainPage = new MainPage(driver);
+        assertEquals(mainPage.getTitle(), "Secure Area", "Login failed");
+
+        mainPage.clickLogout();
     }
 }
