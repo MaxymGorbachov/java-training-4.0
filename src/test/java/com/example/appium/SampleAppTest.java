@@ -11,6 +11,7 @@ import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.testng.Assert;
 
 import java.nio.file.Paths;
 
@@ -29,7 +30,7 @@ public class SampleAppTest {
         if (platform.equals("ANDROID")) {
             var options = new UiAutomator2Options()
                     .setPlatformName("Android")
-                    .setDeviceName("PUT_YOUR_DEVICE_NAME_HERE")
+                    .setDeviceName("emulator-5554")
                     .setApp(Paths.get(path).resolve("ApiDemos-debug.apk").toString());
 
             server = AppiumDriverLocalService.buildService(new AppiumServiceBuilder().usingAnyFreePort());
@@ -40,9 +41,9 @@ public class SampleAppTest {
         } else {
             var options = new XCUITestOptions()
                     .setPlatformName("iOS")
-                    .setPlatformVersion("PUT_YOUR_XCODE_VERSION_HERE")
+                    .setPlatformVersion("16.2")
                     .setAutomationName("XCuiTest")
-                    .setDeviceName("PUT_YOUR_DEVICE_NAME_HERE")
+                    .setDeviceName("iPhone 16 Simulator (18.2)")
                     .setApp(Paths.get(path).resolve("TestApp.app.zip").toString());
 
             server = AppiumDriverLocalService.buildService(new AppiumServiceBuilder().usingAnyFreePort());
@@ -53,9 +54,12 @@ public class SampleAppTest {
 
     @Test
     public void textFieldTest() {
-        // TODO initialise PageView and set "text" to its textField
+        PageView pageView = new PageView(driver);
+        pageView.setTextField("Hello World @0_o@!");
 
-        // TODO assert that textField equals to "text"
+        String text = pageView.getTextField();
+
+        Assert.assertEquals(text, "Hello World @0_o@!", "Text in the field is not as expected!");
     }
 
     @AfterClass

@@ -17,6 +17,7 @@ repositories {
 dependencies {
     implementation 'org.testng:testng:7.9.0'
     implementation 'io.appium:java-client:9.3.0'
+    implementation 'org.slf4j:slf4j-nop:2.0.7'
 }
 
 test {
