@@ -10,9 +10,8 @@ This is a homework for the Intro to Selenium
    You task is to refactor it with the PageObject, PageFactory, and FluentInterface patterns.
    Boilerplate code for pages, steps, and tests also provided.
    Complete all TODOs.
-4. Execute tests in TestClassOne', 'TestClassTwo', 'TestClassThree' once they are fully implemented
-5. Take screenshots of the results
-6. Upload screenshots to Learn (add the link to your GitHub project in the comments)
+4. Take screenshots of the results
+5. Upload screenshots to Learn (add the link to your GitHub project in the comments)
 
 
 ## Unit testing
