@@ -31,7 +31,8 @@ public class SampleAppTest {
             var options = new UiAutomator2Options()
                     .setPlatformName("Android")
                     .setDeviceName("emulator-5554")
-                    .setApp(Paths.get(path).resolve("ApiDemos-debug.apk").toString());
+                    .setApp(Paths.get(path).resolve("ApiDemos-debug.apk").toString())
+                    .setAppActivity(".view.TextFields");
 
             server = AppiumDriverLocalService.buildService(new AppiumServiceBuilder().usingAnyFreePort());
             server.start();
@@ -41,9 +42,9 @@ public class SampleAppTest {
         } else {
             var options = new XCUITestOptions()
                     .setPlatformName("iOS")
-                    .setPlatformVersion("16.2")
+                    .setPlatformVersion("18.2")
                     .setAutomationName("XCuiTest")
-                    .setDeviceName("iPhone 16 Simulator (18.2)")
+                    .setDeviceName("iPhone 16")
                     .setApp(Paths.get(path).resolve("TestApp.app.zip").toString());
 
             server = AppiumDriverLocalService.buildService(new AppiumServiceBuilder().usingAnyFreePort());
