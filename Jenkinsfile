@@ -1,12 +1,28 @@
 pipeline {
-    agent {
-        docker { image 'node:22.12.0-alpine3.21' }
-    }
+    agent any
     stages {
-        stage('Test') {
+        stage('No-op') {
             steps {
-                sh 'node --eval "console.log(process.arch,process.platform)"'
+                sh 'ls'
             }
+        }
+    }
+    post {
+        always {
+            echo 'One way or another, I have finished'
+            deleteDir() /* clean up our workspace */
+        }
+        success {
+            echo 'I succeeded!'
+        }
+        unstable {
+            echo 'I am unstable :/'
+        }
+        failure {
+            echo 'I failed :('
+        }
+        changed {
+            echo 'Things were different before...'
         }
     }
 }
