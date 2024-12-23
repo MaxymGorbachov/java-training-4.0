@@ -43,6 +43,6 @@ public class WireMockTest {
         URL url = new URL("http://localhost:" + wireMockServer.port() + "/search?q=wiremock");
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
-        Assert.assertEquals(connection.getResponseCode(), 205);
+        Assert.assertEquals(connection.getResponseCode(), 200);
     }
 }
